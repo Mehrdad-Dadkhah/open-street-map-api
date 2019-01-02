@@ -1,0 +1,30 @@
+{
+    "name": "mehrdad-dadkhah/open-street-map-api",
+    "description": "Open Street Map (OSM) service to call and get results of APIs",
+    "keywords": [
+        "map",
+        "route",
+        "distance",
+        "duration",
+        "api",
+        "geometry",
+        "geo"
+    ],
+    "homepage": "https://github.com/Mehrdad-Dadkhah/open-street-map-api",
+    "type": "library",
+    "require": {
+        "php": ">=7.0.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "Mehrdad Dadkhah",
+            "email": "mehrdad@dadkhah.me"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MehrdadDadkhah\\OSM\\": "src/"
+        }
+    }
+}
