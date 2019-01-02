@@ -27,8 +27,8 @@ $osm = new OSMRouteService;
         $osm->addCoordinate(35.6998, 51.3310)
             ->addCoordinate(35.7581, 51.5087);
         
-        echo $osm->getDuration()->getWithUnit(MehrdadDadkhah\OSM\Types\Duration::MINUTE_UNIT);
-        echo $osm->getDistance()->getWithUnit(MehrdadDadkhah\OSM\Types\Distance::KILOMETER_UNIT);
+        echo $osm->getDuration()->getWithUnit(\MehrdadDadkhah\OSM\Types\Duration::MINUTE_UNIT); // or 'minute'
+        echo $osm->getDistance()->getWithUnit(\MehrdadDadkhah\OSM\Types\Distance::KILOMETER_UNIT); // or 'kilometer'
 ```
 
 with polyline option:
@@ -39,8 +39,8 @@ use MehrdadDadkhah\OSM\OSMRouteService;
 $osm = new OSMRouteService;
         $osm->setPolyline('ofp_Ik_vpAilAyu@te@g%60E');
         
-        echo $osm->getDuration()->getWithUnit(MehrdadDadkhah\OSM\Types\Duration::MINUTE_UNIT);
-        echo $osm->getDistance()->getWithUnit(MehrdadDadkhah\OSM\Types\Distance::KILOMETER_UNIT);
+        echo $osm->getDuration()->getWithUnit(\MehrdadDadkhah\OSM\Types\Duration::MINUTE_UNIT);
+        echo $osm->getDistance()->getWithUnit(\MehrdadDadkhah\OSM\Types\Distance::KILOMETER_UNIT);
 ```
 
 ## Acknowledgments
