@@ -5,10 +5,8 @@ namespace MehrdadDadkhah\OSM;
 use MehrdadDadkhah\OSM\Types\Distance;
 use MehrdadDadkhah\OSM\Types\Duration;
 
-class OSMRouteService
+class OSMRouteService extends OSMBase
 {
-    const BASE_API_URL = 'http://router.project-osrm.org/route/v1/driving/';
-
     /** @var $requestHandler \GuzzleHttp\Client http guzzle client */
     private $requestHandler;
 
@@ -28,6 +26,16 @@ class OSMRouteService
                 'timeout' => 60,
             ]
         );
+    }
+
+    /**
+     * return api URI function
+     *
+     * @return string
+     */
+    private function getUri(): string
+    {
+        return $this->getBaseUrl() . '/route/v1/driving/';
     }
 
     /**
@@ -137,7 +145,7 @@ class OSMRouteService
             return $duration;
         }
 
-        $this->call(self::BASE_API_URL . $this->makeCoordinatesParam());
+        $this->call($this->getUri() . $this->makeCoordinatesParam());
 
         $duration->setValue($this->jsonData->routes[0]->duration);
 
@@ -154,7 +162,7 @@ class OSMRouteService
             return $duration;
         }
 
-        $this->call(self::BASE_API_URL . 'polyline(' . $this->polyline . ')?overview=false');
+        $this->call($this->getUri() . 'polyline(' . $this->polyline . ')?overview=false');
 
         $duration->setValue($this->jsonData->routes[0]->duration);
 
@@ -171,7 +179,7 @@ class OSMRouteService
             return $distance;
         }
 
-        $this->call(self::BASE_API_URL . $this->makeCoordinatesParam());
+        $this->call($this->getUri() . $this->makeCoordinatesParam());
 
         $distance->setValue($this->jsonData->routes[0]->distance);
 
@@ -189,7 +197,7 @@ class OSMRouteService
             return $distance;
         }
 
-        $this->call(self::BASE_API_URL . 'polyline(' . $this->polyline . ')?overview=false');
+        $this->call($this->getBaseUrl() . 'polyline(' . $this->polyline . ')?overview=false');
 
         $distance->setValue($this->jsonData->routes[0]->distance);
 

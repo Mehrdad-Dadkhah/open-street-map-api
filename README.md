@@ -43,10 +43,17 @@ $osm = new OSMRouteService;
         echo $osm->getDistance()->getWithUnit(\MehrdadDadkhah\OSM\Types\Distance::KILOMETER_UNIT);
 ```
 
+If you have local [osm-backend server](https://hub.docker.com/r/peterevans/osrm-backend), you can change base url by:
+
+```PHP
+        $osm->setBaseUrl('http://your-url.local');
+```
+
 ## Acknowledgments
 
 * Thanks to [osrm-backend](https://github.com/Project-OSRM/osrm-backend/blob/master/docs/http.md)
 
-Uses:
+
+## Uses:
 
 * [guzzlehttp/guzzle](https://github.com/guzzle/guzzle)
