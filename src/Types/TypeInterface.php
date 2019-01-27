@@ -18,12 +18,4 @@ interface TypeInterface
      * @return mixed
      */
     public function getValue();
-
-    /**
-     * get value of type in specific unit function
-     *
-     * @param string $unit
-     * @return mixed
-     */
-    public function getWithUnit(string $unit);
 }

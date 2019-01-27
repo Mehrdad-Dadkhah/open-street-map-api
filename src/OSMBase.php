@@ -5,7 +5,7 @@ namespace MehrdadDadkhah\OSM;
 class OSMBase
 {
     /** @var string base url */
-    private $baseUrl = 'http: //router.project-osrm.org';
+    private $baseUrl = 'http://router.project-osrm.org';
 
     /**
      * Get the value of baseUrl

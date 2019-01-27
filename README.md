@@ -49,6 +49,14 @@ If you have local [osm-backend server](https://hub.docker.com/r/peterevans/osrm-
         $osm->setBaseUrl('http://your-url.local');
 ```
 
+## Reverse location with osm
+```PHP
+$result = $locationService->setBaseUrl('CAN-SET-URL') // it's optional
+        ->setPoint($lat, $long)
+        ->setLanguage('fa')
+        ->reverseLocation();
+```
+
 ## Acknowledgments
 
 * Thanks to [osrm-backend](https://github.com/Project-OSRM/osrm-backend/blob/master/docs/http.md)
