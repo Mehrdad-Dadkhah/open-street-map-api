@@ -57,6 +57,10 @@ $result = $locationService->setBaseUrl('CAN-SET-URL') // it's optional
         ->reverseLocation();
 ```
 
+## Self hosted
+If you want self host osrm-backend and notinimate can copy and custom docker-compose.yml in docker directory.
+
+
 ## Acknowledgments
 
 * Thanks to [osrm-backend](https://github.com/Project-OSRM/osrm-backend/blob/master/docs/http.md)
