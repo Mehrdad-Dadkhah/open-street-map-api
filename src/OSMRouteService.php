@@ -48,8 +48,8 @@ class OSMRouteService extends OSMBase
     public function addCoordinate(float $lat, float $long): self
     {
         $this->coordinates[] = [
-            'lat'  => $lat,
             'long' => $long,
+            'lat'  => $lat,
         ];
 
         return $this;
