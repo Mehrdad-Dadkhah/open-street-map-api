@@ -57,6 +57,19 @@ $result = $locationService->setBaseUrl('CAN-SET-URL') // it's optional
         ->reverseLocation();
 ```
 
+## Geocodeing
+```php
+        use use MehrdadDadkhah\OSM\NominatimSearchPlaceService;
+        .
+        .
+        .
+        $nomiLocationService = new NominatimSearchPlaceService();
+        $nomiLocationService->setLimit(1)
+            ->enableAddressDetails()
+            ->setSearchQuery($city->name) // name of city
+            ->search();
+```
+
 ## Self hosted
 If you want self host osrm-backend and notinimate can copy and custom docker-compose.yml in docker directory.
 
